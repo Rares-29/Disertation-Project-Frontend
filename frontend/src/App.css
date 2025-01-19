@@ -1,0 +1,38 @@
+* {
+  box-sizing:border-box;
+}
+
+:root {
+  --main: #95b1f1; 
+  --main-opacity10: #95b1f1;
+  --secondary: #383a41;
+}
+
+
+
+body {
+  font-family: 'Catamaran', sans-serif;
+  margin: 0 30px;
+  @media(max-width:900px) {
+      margin:0;
+  }
+  @media(max-width:450px) {
+      background-color:var(--main-opacity10);
+      min-height:100vh;
+  }
+}
+
+
+
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Martel', serif;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.small-size {
+  font-size:0.7rem;
+}
