@@ -5,8 +5,9 @@
 }
 
 .logo {
-    width:100px;
-    height: auto;
+    width: 80px;
+    height: 80px;
+    background-image: "src/components/logo.png";
 }
 
 .menu {
@@ -17,8 +18,7 @@
     padding: 20px;
     max-width: 900px;
     margin: 20px auto;
-    border-bottom: 1px solid #eee;
-    
+    border-bottom: 1px solid #ffffff;
     @media (max-width: 650px) {
       flex-direction: column;
       align-items: center;
@@ -38,14 +38,14 @@
     display:block;
     border-radius: 15px;
     @media(min-width:900px) {
-      color: white;
+      color: rgb(255, 255, 255);
       
 
     }
   } 
 
   .item:hover {
-    background-color:#9eb8ff;
+    background-color: #00b4cc71;
     color: #fff;
     animation: flash 0.3s ease-in alternate;
   } 

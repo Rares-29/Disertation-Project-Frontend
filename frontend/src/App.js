@@ -7,6 +7,7 @@ import Layout from './components/Layout'
 import { useState } from 'react';
 import { UserContext } from './components/UserContext';
 import Logout from './pages/Logout';
+import StudentDashboard from './pages/StudentDashboard';
 
 function App() {
   const [user, setUser] = useState(localStorage.getItem("token") !== null);
@@ -15,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route path = '/' element={<Layout/>}>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<StudentDashboard />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup/>} />
             <Route path = "logout" element={<Logout/>} />

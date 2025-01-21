@@ -66,26 +66,10 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" style={{backgroundColor:"var(--secondary)"}}>
+    <AppBar position="static" style={{backgroundColor: "#000"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            <img src = "/images/logo.png" className="logo" alt ="logo"></img>
-          </Typography>
+
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -119,24 +103,10 @@ function ResponsiveAppBar() {
       {user ? <LoggedInNavbar></LoggedInNavbar> : <LoggedOutNavbar></LoggedOutNavbar>}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            <img src = "/images/logo.png" className="logo" alt ="logo"></img>
-          </Typography>
+          <Box sx={{ display: { xs: 'flex' }, alignItems: 'center' }}>
+          <img src="/images/logo.png" className="logo" />
+            </Box>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           {user ? <LoggedInNavbar></LoggedInNavbar> : <LoggedOutNavbar></LoggedOutNavbar>}
           </Box>
