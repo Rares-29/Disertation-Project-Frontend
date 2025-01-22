@@ -8,17 +8,16 @@ import { UserContext } from '../components/UserContext';
 import Button from 'react-bootstrap/Button';
 import Loading from '../components/Loading';
 import authApi from '../api/authApi';
-import {jwtDecode} from 'jwt-decode';
 
 
-const Login = () => {
+const Register = () => {
     
   const {user, setUser} = useContext(UserContext);
   const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
   useEffect(() => {
-    if (user.role) navigate("/");
-  }, [user.role]);
+    if (user) navigate("/");
+  }, [user]);
 
     const [data, setData] = useState({
         username: "",
@@ -36,21 +35,14 @@ const Login = () => {
         setLoading(true);
         const response = await authApi.login(data);
         localStorage.setItem('token', response.data.token);
-        try {
-          // Decode the JWT token
-          const decoded = jwtDecode(response.data.token);
-          setUser(decoded);
-        } catch (error) {
-          console.error('Invalid token:', error.message);
-        }
         setTimeout(() => {
+            setUser(true);
             navigate('/');
         }, 1000) 
       } catch (error) {
         setLoading(false);
         console.log(error);
         setError(true);
-        
       }
     };
   return (
@@ -73,10 +65,10 @@ const Login = () => {
       <p style={{fontSize:"0.8rem", marginTop:"10px"}}>Forgot password?</p>
       <Button className="submit-button" variant="primary" onClick={sendData}>
       {!loading ?<p style={{margin:0, padding:0}}>Sign in</p>: <Loading/>}</Button>
-      <p style={{marginTop:"10px"}}>Don't have an account? <a style={{textDecoration:"none", color:"black", fontWeight:"700"}} href="/register">Register for free</a></p>
+      <p style={{marginTop:"10px"}}>Don't have an account? <a style={{textDecoration:"none", color:"black", fontWeight:"700"}} href="/signup">Register for free</a></p>
     </div>
     </div>
   )
 }
 
-export default Login
+export default Register
