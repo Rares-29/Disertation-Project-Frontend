@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+  background: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #E9F1FA; 
+  margin: 0;
+  padding: 0;
+  height: 100vh; 
+}
+
+.container {
+  width: 100%;
+  padding: 5px;
+  max-width: 800px;
+  margin-left: 500px;
+  margin-top: -4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.MuiList-root {
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  width: 100%;
+}
+
+.MuiListItem-root {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 10px;
+}
+
+.MuiListItemText-root {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+/* aici modific search bar */
+
+.search { 
+  width: 100%;
+  position: center;
+  display: flex;
+  margin-left: 500px;
+  margin-top: 200px;
+}
+
+.searchTerm {
+  width: 100%;
+  border: none;
+  border-right: none;
+  padding: 5px;
+  height: 45px;
+  border-radius: 3px;
+  outline: none;
+  color: #9DBFAF;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.searchTerm:focus {
+  color: #000000;
+}
+
+.searchTerm::placeholder {
+  color: #000000;
+}
+
+.searchButton {
+  width: 80px;
+  height: 45px;
+  background: #000000 url('./searches.png') no-repeat center center;
+  background-size: 19px;
+  border-radius: 3px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.searchButton:hover {
+  background-color: #0091a5;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.PinnedSubheaderList {
+  display: none; 
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.PinnedSubheaderList.show {
+  display: block; 
+}
